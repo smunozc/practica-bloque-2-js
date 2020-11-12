@@ -18,11 +18,17 @@ class User {
   }
 }
 
-fetch("users.json")
+const users = fetch("users.json")
   .then(response => response.json())
   .then(data => {
     array = data;
     console.log(array);
+    for (let i = 0; i < array.length; i++) {
+      let user = new User(array[i].name, array[i].money);
+      users.push(user);
+    }
   });
 
 const users = [];
+
+console.log(users);
