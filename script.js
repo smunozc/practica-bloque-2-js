@@ -18,7 +18,7 @@ class User {
   }
 }
 
-const users = fetch("users.json")
+fetch("users.json")
   .then(response => response.json())
   .then(data => {
     array = data;
