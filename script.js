@@ -18,17 +18,20 @@ class User {
   }
 }
 
+const users = [];
+
 fetch("users.json")
   .then(response => response.json())
   .then(data => {
     array = data;
-    console.log(array);
     for (let i = 0; i < array.length; i++) {
-      let user = new User(array[i].name, array[i].money);
+      let user = new User(array[i].name, array[i].money, showMeTheMoneyFunc);
       users.push(user);
     }
+    console.log(users);
+    showMeTheMoneyFunc(users[2]);
   });
 
-const users = [];
-
-console.log(users);
+function showMeTheMoneyFunc(user) {
+  alert("Dinero del usuario " + user.name + ": " + user.money);
+}
