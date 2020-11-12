@@ -7,4 +7,22 @@
 // Cada instancia de "User" se irá añadiendo en el array "users" con el método "push".
 // Una vez hayáis añadido todas las instancias al array de usuarios, ejecutad el método "showMeTheMoney" del tercer usuario "Roberto".
 
+class User {
+  name;
+  money;
+  showMeTheMoney;
+  constructor(name, money, showMeTheMoney) {
+    this.name = name;
+    this.money = money;
+    this.showMeTheMoney = showMeTheMoney;
+  }
+}
+
+fetch("users.json")
+  .then(response => response.json())
+  .then(data => {
+    array = data;
+    console.log(array);
+  });
+
 const users = [];
